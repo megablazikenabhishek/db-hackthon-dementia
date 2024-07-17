@@ -3,7 +3,8 @@ import "./dashboardBody.css";
 
 function DashboardBody() {
   return (
-    <div className="px-2 mt-2 flex flex-col">
+      <div className="px-2 mt-4 flex flex-col">
+{/* Part 1 */}
       <div className="flex justify-between align-center">
         <div>
           <svg width="47vw" height="168" viewBox="0 0 187 168" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,18 +195,21 @@ function DashboardBody() {
             </svg>
         </div>
       </div>
-
+{/* Part 2 */}
         <div className="mt-2 flex flex-row justify-between items-center">
-            <div className="heart-rate w-[47vw] px-4 flex flex-row justify-between items-center">
+            <div className=" w-[47vw] mr-1 flex justify-center items-center">
+                <div className="heart-rate px-4 flex flex-row justify-between items-center">
                 <div>
                     <img src="/heart-beat.png" alt="" />
                 </div>
                 <div className="heart-rate-value">
-                    81 <span className="text-sm">bpm</span>
+                    80 <span className="text-sm">bpm</span>
                 </div>
             </div>
+            </div>
             
-            <div className="stress-rate w-[47vw] px-4 flex flex-row justify-between items-center">
+            <div className="w-[47vw] flex justify-center items-center">
+            <div className="stress-rate px-4 flex flex-row justify-between items-center">
                 <div>
                     <img src="/stress-icon.png" alt="" />
                 </div>
@@ -213,6 +217,35 @@ function DashboardBody() {
                     60 <span className="text-sm">&nbsp;&nbsp;</span>
                 </div>
             </div>
+            </div>
+
+        </div>
+{/* Part 3 */}
+        <div className="upcoming-section-name mt-4 ml-4">
+            Upcoming
+        </div>
+
+        <div className="px-4">
+            <div className="mt-2 mb-1">
+            <div className="upcoming-event p-2 w-full flex flex-row justify-start items-center">
+                <div className="event-time flex justify-start items-center px-1">
+                    12:00 PM
+                </div>
+                <div className="event-body ml-3 flex justify-start items-center px-1">
+                    Daily Checkups
+                </div>
+            </div>
+        </div>
+        <div className="mt-2 mb-1">
+            <div className="upcoming-event p-2 w-full flex flex-row justify-start items-center">
+                <div className="event-time flex justify-start items-center px-1">
+                    12:00 PM
+                </div>
+                <div className="event-body ml-3 flex justify-start items-center px-1">
+                    Daily Checkups
+                </div>
+            </div>
+        </div>
         </div>
     </div>
   );
