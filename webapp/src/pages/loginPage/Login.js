@@ -5,12 +5,6 @@ import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
   return (
     <div className="Login">
-      <div className="status-bar">
-        <span className="time">9:41</span>
-        <span className="signal">📶</span>
-        <span className="wifi">📡</span>
-        <span className="battery">🔋</span>
-      </div>
       <div className="Ellipse1"></div>
       <div className="Ellipse2"></div>
       <div className="WelcomeBack">Welcome Back!<br/></div>
@@ -32,7 +26,7 @@ const Login = () => {
         <span>Don’t have an account?</span> <a href="#" className="SignUp">Sign Up</a>
       </div>
       <div className="BarsHomeIndicator">
-        <div className="Line" />
+        {/* <div className="Line" /> */}
       </div>
     </div>
   );
