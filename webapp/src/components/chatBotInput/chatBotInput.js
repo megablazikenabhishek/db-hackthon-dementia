@@ -7,16 +7,21 @@ function ChatBotInput({pushChat}) {
   const [query, setQuery] = useState("");
   const handlePushChat = (query) => {
     pushChat(query, "sender");
-    setQuery("");
     getResponse(query).then((data) => {
       pushChat(data.answer, "receiver");
     });
+    setQuery("");
   }
 
   const getResponse = async (query) => {
     // axios post
     const response = await axios.post("https://wear-os.onrender.com/chatbot", { message: query });
-    return response.data;
+    console.log(response.data);
+    // check if response.data is not empty by checking response.data.answer
+    if(response.data.answer){
+      return response.data;
+    }
+    return { answer: "Sorry, I didn't get that!" };
   }
 
   return (
