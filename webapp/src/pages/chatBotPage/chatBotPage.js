@@ -5,11 +5,12 @@ import ChatDisplay from "../../components/chatDisplay/chatDisplay";
 import { useState } from "react";
 
 function ChatBotPage() {
-  const [chatsList, setChatsList] = useState([{ message: "Hii, How are you?", type: "sender" },
-    { message: "Hello, I am fine!", type: "receiver" },]);
+  const [chatsList, setChatsList] = useState([]);
 
   const pushChat = (message, type) => {
-    setChatsList([...chatsList, { message: message, type: type }])
+    // append to chatsList
+    setChatsList(prevChatsList => [...prevChatsList, { message, type }]);
+    console.log(type, chatsList)
   };
 
   return (
