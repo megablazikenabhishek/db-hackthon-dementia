@@ -1,7 +1,24 @@
 import React from "react";
 import "./chatBotInput.css";
+import { useState } from "react";
+import axios from "axios";
 
-function ChatBotInput() {
+function ChatBotInput({pushChat}) {
+  const [query, setQuery] = useState("");
+  const handlePushChat = (query) => {
+    pushChat(query, "sender");
+    setQuery("");
+    getResponse(query).then((data) => {
+      pushChat(data.answer, "receiver");
+    });
+  }
+
+  const getResponse = async (query) => {
+    // axios post
+    const response = await axios.post("https://wear-os.onrender.com/chatbot", { message: query });
+    return response.data;
+  }
+
   return (
     <div className="h-[12vh] w-full bg-white absolute bottom-0 left-0 px-2 mb-2 flex justify-between items-center">
       <div className="w-[85%]">
@@ -11,8 +28,10 @@ function ChatBotInput() {
             class="chatinput-input"
             placeholder="Type..."
             autoComplete="false"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
           />
-          <button class="chatinput-send">
+          <button class="chatinput-send" onClick={() => handlePushChat(query)}>
             <svg
               width="22"
               height="24"
