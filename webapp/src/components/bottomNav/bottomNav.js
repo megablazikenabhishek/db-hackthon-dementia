@@ -122,7 +122,7 @@ function BottomNav() {
               </defs>
             </svg>
           </div>
-          <p>Home</p>
+          <p>Profile</p>
         </div>
       </div>
     </div>

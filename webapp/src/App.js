@@ -10,6 +10,9 @@ import CommunityPage from './pages/communityPage/communityPage';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReportPage from './pages/reportPage/reportPage';
+import ProfilePage from './pages/profilePage/profilePage';
+import SchedulePage from './pages/schedulePage/schedulePage';
 
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
         <Route path='/signin' element={<SignIn />}/>
         <Route path='/chatbot' element={<ChatBotPage />}/>
         <Route path='/community' element={<CommunityPage />}/>
+        <Route path='/report' element={<ReportPage />}/>
+        <Route path='/schedule' element={<SchedulePage />}/>
+        <Route path='/profile' element={<ProfilePage />}/>
         <Route path='*' element={<NotFoundPage />}/>
       </Routes>
     </BrowserRouter>
