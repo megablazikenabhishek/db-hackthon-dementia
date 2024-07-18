@@ -1,7 +1,7 @@
 import React from "react";
 import "./dashboardBody.css";
 
-function DashboardBody() {
+function DashboardBody({heartRate}) {
   return (
       <div className="px-2 mt-4 flex flex-col">
 {/* Part 1 */}
@@ -203,7 +203,7 @@ function DashboardBody() {
                     <img src="/heart-beat.png" alt="" />
                 </div>
                 <div className="heart-rate-value">
-                    80 <span className="text-sm">bpm</span>
+                    {heartRate} <span className="text-sm">bpm</span>
                 </div>
             </div>
             </div>

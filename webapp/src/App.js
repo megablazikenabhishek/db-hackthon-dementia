@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import NotFoundPage from './pages/notFoundPage/notFoundPage';
@@ -8,8 +8,14 @@ import Login from './pages/loginPage/Login';
 import SignIn from './pages/signInPage/SignIn';
 import CommunityPage from './pages/communityPage/communityPage';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function App() {
   return (
+    <>
+      <ToastContainer /> 
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<DashboardPage />}/>
@@ -20,6 +26,7 @@ function App() {
         <Route path='*' element={<NotFoundPage />}/>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
