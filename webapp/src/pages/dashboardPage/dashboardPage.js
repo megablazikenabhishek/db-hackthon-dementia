@@ -10,7 +10,7 @@ function DashboardPage(params) {
     const [heartRate, setHeartRate] = useState(0);
     
     useEffect(() => {
-        const websocket = new WebSocket('ws://wear-os.onrender.com');
+        const websocket = new WebSocket('wss://wear-os.onrender.com');
     
         websocket.onopen = () => {
             console.log('WebSocket is connected');
